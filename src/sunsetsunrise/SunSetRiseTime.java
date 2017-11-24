@@ -77,13 +77,16 @@ public class SunSetRiseTime {
 			sunset = (String) results.get("sunset");
 			status = (String) jo.get("status");
 			
+			if (status.equals("OK")) {	
+				sunriseInPST= UTC2PST(this.sunrise);
+				sunsetInPST = UTC2PST(this.sunset);				
+			}
+			
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-				
-		sunriseInPST= UTC2PST(this.sunrise);
-		sunsetInPST = UTC2PST(this.sunset);
+
 		
 		
 		
